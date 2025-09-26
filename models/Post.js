@@ -47,10 +47,20 @@ type:String
       createdAt:{type:Date,default:Date.now}
     }
   ],
+  likes:[{
+    user:{type:mongoose.Schema.Types.ObjectId,ref:'User'},
+  }],
+  dislikes:[{
+    user:{type:mongoose.Schema.Types.ObjectId,ref:'User'}
+  }],
   views:{
     type:Number,
     default:0
   },
+  comments:[{
+    type:mongoose.Schema.Types.ObjectId,
+    ref:"Comment"
+  }],
   isPublished:{
     type:Boolean,
     default:true
